@@ -33,15 +33,10 @@ namespace DartShooting.Web
                 config
                     .EnableSwagger(c =>
                     {
-                        //c.RootUrl(req => {
-                        //    KeyedCollection<string, ConfigurationProperty> parameters = configSettings.Sections["WebServiceConfig"].Parameters;
-
-                        //    if (parameters.Contains("appRoot"))
-                        //    {
-                        //        return parameters["appRoot"].Value;
-                        //    }
-                        //    return "";
-                        //});
+                        c.RootUrl(req =>
+                        {
+                            return req.RequestUri.GetLeftPart(UriPartial.Authority) + "/dartshooting";
+                        });
                         c.SingleApiVersion("v1", "A title for your API");
                     })
                     .EnableSwaggerUi(

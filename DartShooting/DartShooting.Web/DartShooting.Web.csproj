@@ -134,7 +134,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CountStateful.Contracts\CountStateful.Contracts.csproj">
+      <Project>{caf6f8fe-08a1-43ea-8690-0bad12d440d0}</Project>
+      <Name>CountStateful.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
