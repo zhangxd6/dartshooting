@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CountStateful\CountStateful.csproj" />
     <ProjectReference Include="..\DartShooting.Web\DartShooting.Web.csproj" />
+    <ProjectReference Include="..\StatelessActor\StatelessActor.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Plan\plan.md" />
