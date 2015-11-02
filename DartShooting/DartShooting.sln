@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatelessActor", "Stateless
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatelessActor.Interfaces", "StatelessActor.Interfaces\StatelessActor.Interfaces.csproj", "{FB0524FF-2F13-42AB-9426-96296DDD42FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatefulActor", "StatefulActor\StatefulActor.csproj", "{9E4A808B-5D6D-4314-A360-E64FC5EDDAEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatefulActor.Interfaces", "StatefulActor.Interfaces\StatefulActor.Interfaces.csproj", "{A8CAF829-DA27-466C-8EF4-EF4DDA8A32D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +72,18 @@ Global
 		{FB0524FF-2F13-42AB-9426-96296DDD42FB}.Release|Any CPU.ActiveCfg = Release|x64
 		{FB0524FF-2F13-42AB-9426-96296DDD42FB}.Release|x64.ActiveCfg = Release|x64
 		{FB0524FF-2F13-42AB-9426-96296DDD42FB}.Release|x64.Build.0 = Release|x64
+		{9E4A808B-5D6D-4314-A360-E64FC5EDDAEB}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{9E4A808B-5D6D-4314-A360-E64FC5EDDAEB}.Debug|x64.ActiveCfg = Debug|x64
+		{9E4A808B-5D6D-4314-A360-E64FC5EDDAEB}.Debug|x64.Build.0 = Debug|x64
+		{9E4A808B-5D6D-4314-A360-E64FC5EDDAEB}.Release|Any CPU.ActiveCfg = Release|x64
+		{9E4A808B-5D6D-4314-A360-E64FC5EDDAEB}.Release|x64.ActiveCfg = Release|x64
+		{9E4A808B-5D6D-4314-A360-E64FC5EDDAEB}.Release|x64.Build.0 = Release|x64
+		{A8CAF829-DA27-466C-8EF4-EF4DDA8A32D4}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{A8CAF829-DA27-466C-8EF4-EF4DDA8A32D4}.Debug|x64.ActiveCfg = Debug|x64
+		{A8CAF829-DA27-466C-8EF4-EF4DDA8A32D4}.Debug|x64.Build.0 = Debug|x64
+		{A8CAF829-DA27-466C-8EF4-EF4DDA8A32D4}.Release|Any CPU.ActiveCfg = Release|x64
+		{A8CAF829-DA27-466C-8EF4-EF4DDA8A32D4}.Release|x64.ActiveCfg = Release|x64
+		{A8CAF829-DA27-466C-8EF4-EF4DDA8A32D4}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

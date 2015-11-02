@@ -145,6 +145,10 @@
       <Project>{caf6f8fe-08a1-43ea-8690-0bad12d440d0}</Project>
       <Name>CountStateful.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StatefulActor.Interfaces\StatefulActor.Interfaces.csproj">
+      <Project>{a8caf829-da27-466c-8ef4-ef4dda8a32d4}</Project>
+      <Name>StatefulActor.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StatelessActor.Interfaces\StatelessActor.Interfaces.csproj">
       <Project>{fb0524ff-2f13-42ab-9426-96296ddd42fb}</Project>
       <Name>StatelessActor.Interfaces</Name>

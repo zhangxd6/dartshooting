@@ -1,8 +1,8 @@
 ﻿using CountStateful.Contracts;
 using Microsoft.ServiceFabric.Actors;
 using Microsoft.ServiceFabric.Services;
+using StatefulActor.Interfaces;
 using StatelessActor.Interfaces;
-using StatelessActor.Interfaces.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,17 +28,38 @@ namespace DartShooting.Web.Controllers
         {
             var proxy = ServiceProxy.Create<ICount>("999977808", new Uri("fabric:/DartShooting/CountStateful"));
             return proxy.GetCount().Result;
-        } 
+        }
 
 
         [HttpGet]
         [Route("~/api/position")]
-        public Position GetPosition()
+        public StatelessActor.Interfaces.Models.Position GetPosition()
         {
-            var actorId = ActorId.NewId();
+            var actorId = new ActorId(11111);
             var actorAddress = new Uri("fabric:/DartShooting/StatelessActorService");
             IStatelessActor proxy = ActorProxy.Create<IStatelessActor>(actorId, actorAddress);
             return proxy.GetRandomPosition().Result;
+        }
+
+        [HttpGet]
+        [Route("~/api/state/position")]
+        public StatefulActor.Interfaces.Models.Location GetStatefulPosition()
+        {
+            var actorId = new ActorId(11111);
+
+            var actorAddress = new Uri("fabric:/DartShooting/StatefulActorService");
+            IStatefulActor proxy = ActorProxy.Create<IStatefulActor>(actorId, actorAddress);
+            return proxy.GetRandomPosition().Result;
+        }
+
+        [HttpGet]
+        [Route("~/api/state/position/count")]
+        public int GetStatefulPositionCount()
+        {
+            var actorId = new ActorId(11111);
+            var actorAddress = new Uri("fabric:/DartShooting/StatefulActorService");
+            IStatefulActor proxy = ActorProxy.Create<IStatefulActor>(actorId, actorAddress);
+            return proxy.GetCountAsync().Result;
         }
     }
 }

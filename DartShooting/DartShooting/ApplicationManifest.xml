@@ -5,9 +5,16 @@
     <Parameter Name="CountStateful_MinReplicaSetSize" DefaultValue="2" />
     <Parameter Name="CountStateful_PartitionCount" DefaultValue="1" />
     <Parameter Name="CountStateful_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="StatefulActor_MinReplicaSetSize" DefaultValue="2" />
+    <Parameter Name="StatefulActor_PartitionCount" DefaultValue="3" />
+    <Parameter Name="StatefulActor_TargetReplicaSetSize" DefaultValue="3" />
   </Parameters>
   <ServiceManifestImport>
     <ServiceManifestRef ServiceManifestName="StatelessActorPkg" ServiceManifestVersion="1.0.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="StatefulActorPkg" ServiceManifestVersion="1.0.0.0" />
     <ConfigOverrides />
   </ServiceManifestImport>
   <ServiceManifestImport>
@@ -23,6 +30,11 @@
       <StatelessService ServiceTypeName="StatelessActorServiceType">
         <UniformInt64Partition PartitionCount="9" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
       </StatelessService>
+    </Service>
+    <Service Name="StatefulActorService">
+      <StatefulService ServiceTypeName="StatefulActorServiceType" TargetReplicaSetSize="[StatefulActor_TargetReplicaSetSize]" MinReplicaSetSize="[StatefulActor_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[StatefulActor_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
     </Service>
     <Service Name="Web">
       <StatelessService ServiceTypeName="WebType" InstanceCount="[Web_InstanceCount]">
